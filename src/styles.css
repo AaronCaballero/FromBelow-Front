@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: #c8dae8;
+}
+
+html{
+    margin: 0px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@font-face {
+    font-family: 'Magic';
+    src: url('./assets/Magic.ttf');
+  }
+
+  @font-face {
+    font-family: 'MagicBold';
+    src: url('./assets/MagicBold.ttf');
+  }
+  @font-face {
+    font-family: 'MagicItalics';
+    src: url('./assets/MagicItalic.ttf');
+  }
+  @font-face {
+    font-family: 'MagicIcons';
+    src: url('./assets/MagicIcons.ttf');
+  }

@@ -1,0 +1,37 @@
+mat-toolbar{
+    background-color: #492f43;
+    color: #f4dbdf;
+}
+
+.vertical-line{
+  border-right: solid 1px white;
+  height: 40px;
+}
+
+.example-spacer {
+    flex: 0.1 1 auto;
+  }
+
+  .space-left {
+    flex: 1 1 auto;
+  }
+
+a{
+    text-decoration: none;
+    color: #f4dbdf;
+}
+.logo{
+  font-family: 'Magic';
+    font-size: 19px;
+    padding-right:1pc;
+
+}
+
+.logo img {
+  width:60px;
+  vertical-align: middle;
+}
+  
+  button{
+    margin-right: 30px;
+  }

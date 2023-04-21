@@ -1,0 +1,6 @@
+{
+    "/api/authenticate":{
+        "target":"http://localhost:8080/authenticate",
+        "secure":"false"
+    }
+}
