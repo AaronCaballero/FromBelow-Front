@@ -13,7 +13,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {  HttpClientModule } from '@angular/common/http';
+import {  HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { AuthInterceptor } from './authInterceptor';
 
 
 
@@ -22,7 +25,9 @@ import {  HttpClientModule } from '@angular/common/http';
     AppComponent,
     TorneosComponent,
     InicioComponent,
-    LoginComponent
+    LoginComponent,
+    AdminPanelComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,7 @@ import {  HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

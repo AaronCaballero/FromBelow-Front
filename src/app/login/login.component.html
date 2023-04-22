@@ -16,9 +16,7 @@
         <mat-error *ngIf="password.invalid">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
 <br>
-      <input type="submit" value="Submit">
+      <button mat-raised-button [disabled]="username.invalid || password.invalid" 
+                  type="submit" value="Submit"> Submit</button>
 </form>
-
-<button type="button" value="Submit" (click)="signout()"> SIgn out</button>
-
-<button type="button" value="Submit" (click)="admin()"> admin test</button>
+  
