@@ -32,9 +32,4 @@ export class LoginComponent {
     return 'Obligatorio'
   }
 
-  getUserRole(){
-    this.loginService.getUserRole().subscribe(data => {
-      console.log(data)
-    })
-  }
 }

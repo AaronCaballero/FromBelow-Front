@@ -11,6 +11,7 @@ import {  Router } from '@angular/router';
 export class AppComponent{
 
    logged = false;
+   role:String = ""
 
   constructor(private title: Title, private loginService:LoginService, private router:Router) {}
 
@@ -18,8 +19,12 @@ export class AppComponent{
     this.title.setTitle("From Below App");
 
     this.loginService.getUserRole().subscribe(data =>{
-      if(data['message'] != undefined)
+      if(data['message'] != undefined){
+        this.role = data['message']
         this.logged = true
+      }
+        
+         
     })
   }
 

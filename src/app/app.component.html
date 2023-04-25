@@ -1,22 +1,14 @@
 <mat-toolbar>
   <mat-toolbar-row>
-    <a routerLink=""><span class="logo"><img src="./assets/images/logo.png">From Below Team</span></a>
+    <a href=""><span class="logo"><img src="./assets/images/logo.png">From Below Team</span></a>
     <span class="vertical-line"></span>
     <span class="example-spacer"></span>
-    <button mat-raised-button>Torneos</button>   
-    <button mat-raised-button>Ligas</button>  
-    <button mat-raised-button>Eventos</button>  
+    <button mat-raised-button *ngIf="logged" routerLink="perfil">Perfil</button>  
+    <button mat-raised-button *ngIf="logged && role=='admin'" routerLink="admin">Panel Admin</button>  
     <span class="space-left"></span>
     <a routerLink="login" *ngIf="!logged">Log in</a>
     <a (click)="signout()" href="" *ngIf="logged">Log out</a>
   </mat-toolbar-row>
 </mat-toolbar>
-
-
-<a routerLink=""><button>inicio</button></a>
-<br>
-<a routerLink="admin"><button>admin</button></a>
-<br>
-<a routerLink="perfil"><button>perfil</button></a>
 
 <router-outlet></router-outlet>

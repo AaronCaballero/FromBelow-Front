@@ -17,6 +17,7 @@ import {  HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { AuthInterceptor } from './authInterceptor';
+import { LigaComponent } from './liga/liga.component';
 
 
 
@@ -27,7 +28,8 @@ import { AuthInterceptor } from './authInterceptor';
     InicioComponent,
     LoginComponent,
     AdminPanelComponent,
-    PerfilComponent
+    PerfilComponent,
+    LigaComponent
   ],
   imports: [
     BrowserModule,

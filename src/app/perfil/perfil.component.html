@@ -1,1 +1,15 @@
-<p>perfil works!</p>
+
+<h2> LIGAS ACTIVAS:</h2>
+<br>
+<div *ngIf="ligas.length != 0">
+    <hr>
+        <a *ngFor="let liga of ligas" routerLink="liga" [queryParams]="{id:liga.id}">
+            {{liga.edicion}} Edicion Liga {{liga.formato}} Alcora
+            <br>
+            fecha Inicio: {{liga.fecha_ini | date:'dd-MM-yyyy'}}
+            <br>
+            fecha Fin: {{liga.fecha_fin | date:'dd-MM-yyyy'}}
+            <hr>
+        </a>
+</div>
+<br>

@@ -7,7 +7,7 @@ import { respHttp } from './respHttp';
 })
 export class LoginService {
 
-  private role: any;
+  role: any;
 
   constructor(private http:HttpClient) { }
 

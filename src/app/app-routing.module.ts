@@ -6,11 +6,13 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { authAdminGuard } from './auth-admin.guard';
 import { PerfilComponent } from './perfil/perfil.component';
 import { authUserGuard } from './auth-user.guard';
+import { LigaComponent } from './liga/liga.component';
 
 const routes: Routes = [
   {path: '', component: InicioComponent},
   {path: 'admin', component: AdminPanelComponent,canActivate:[authAdminGuard]},
   {path: 'perfil', component: PerfilComponent,canActivate:[authUserGuard]},
+  {path: 'perfil/liga', component: LigaComponent,canActivate:[authUserGuard]},
   {path: 'login', component: LoginComponent}
 ];
 

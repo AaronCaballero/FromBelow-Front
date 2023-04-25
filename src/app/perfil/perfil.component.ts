@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { LigaService } from '../liga.service';
+import { respLiga } from '../respLiga';
 
 @Component({
   selector: 'app-perfil',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent {
+  ligas: respLiga[] = [];
+
+  constructor(private ligaService:LigaService){}
+
+  ngOnInit(){
+    this.ligaService.getLigasActivas().subscribe(data =>{
+      this.ligas = data
+    })
+  }
 
 }
