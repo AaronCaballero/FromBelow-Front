@@ -18,6 +18,9 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { AuthInterceptor } from './authInterceptor';
 import { LigaComponent } from './liga/liga.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 
 
@@ -42,6 +45,8 @@ import { LigaComponent } from './liga/liga.component';
     MatIconModule,
     MatInputModule,
     FormsModule,
+    MatSelectModule,
+    MatExpansionModule,
     HttpClientModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],

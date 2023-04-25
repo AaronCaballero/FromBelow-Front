@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { LigaService } from '../liga.service';
+import { respPartida } from '../respPartida';
+
 
 @Component({
   selector: 'app-liga',
@@ -8,11 +11,19 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class LigaComponent {
 
-  constructor(private route: ActivatedRoute){}
+  partidas:respPartida[] = []
+
+  constructor(private route: ActivatedRoute,private ligaService:LigaService){}
 
   ngOnInit(){
     this.route.queryParams.subscribe(params=>{
-      console.log(params['id'])
+      let liga_id = params['id']
+      this.ligaService.getPartidasDelJugador(liga_id).subscribe(data=>{
+        console.log(data[0])
+        this.partidas = data
+      })
     })
   }
+
+
 }
