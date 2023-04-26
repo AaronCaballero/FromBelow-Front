@@ -5,6 +5,7 @@
     <div *ngFor="let partida of partidas, let i = index">
         
         <mat-accordion>
+          
             <mat-expansion-panel>  
             <mat-expansion-panel-header>
             <mat-panel-title>
@@ -17,7 +18,7 @@
             </mat-expansion-panel-header>
             <mat-form-field appearance="fill" class="resultado">
 
-                <mat-select value="{{partida.result_player1}}" [disabled]="partida.jugada">
+                <mat-select #selUno value="{{partida.result_player1}}" [disabled]="partida.jugada">
                   <mat-option value=0>0</mat-option>
                   <mat-option value=1>1</mat-option>
                   <mat-option value=2>2</mat-option>
@@ -26,14 +27,16 @@
     
               <mat-form-field appearance="fill" class="resultado">
     
-                <mat-select value="{{partida.result_player2}}" [disabled]="partida.jugada">
+                <mat-select #selDos value="{{partida.result_player2}}" [disabled]="partida.jugada">
                   <mat-option value=0>0</mat-option>
                   <mat-option value=1>1</mat-option>
                   <mat-option value=2>2</mat-option>
                 </mat-select>
               </mat-form-field>
     
-            <button [disabled]="partida.jugada">submit</button>
+            <button (click)="click(partida.partida_id,selUno.value,selDos.value,partida.player1_id,partida.player2_id)"
+             [disabled]="partida.jugada">submit</button>
+
             </mat-expansion-panel>
         </mat-accordion>
         <hr>

@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LigaService } from '../liga.service';
 import { respPartida } from '../respPartida';
+
 
 
 @Component({
@@ -13,16 +14,27 @@ export class LigaComponent {
 
   partidas:respPartida[] = []
 
+  liga_id:any
+
   constructor(private route: ActivatedRoute,private ligaService:LigaService){}
 
   ngOnInit(){
     this.route.queryParams.subscribe(params=>{
-      let liga_id = params['id']
-      this.ligaService.getPartidasDelJugador(liga_id).subscribe(data=>{
-        console.log(data[0])
+       this.liga_id = params['id']
+      this.ligaService.getPartidasDelJugador(this.liga_id).subscribe(data=>{
         this.partidas = data
       })
     })
+  }
+
+  click(id:number,SelUno:number,SelDos:number,PlayUno:number,PlayDos:number){
+
+    if(confirm("Estas seguro?")){
+      this.ligaService.setResultadoPartida(id,SelUno,SelDos,PlayUno,PlayDos,this.liga_id).subscribe(data=>{
+        console.log(data)
+      })
+    }
+
   }
 
 

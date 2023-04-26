@@ -1,5 +1,5 @@
 export interface respPartida{
-    id_partida:number,
+    partida_id:number,
     player1_id:number
     player2_id:number
     player1_nombre:String
