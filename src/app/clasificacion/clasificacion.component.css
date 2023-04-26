@@ -1,0 +1,12 @@
+
+.colPuntos{
+    background-color: gold !important;
+}
+tr:nth-child(even){
+    background-color: rgb(238, 237, 237);
+}
+
+th{
+    background-color: brown !important;
+    color: antiquewhite !important;
+}

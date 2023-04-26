@@ -20,6 +20,9 @@ import { AuthInterceptor } from './authInterceptor';
 import { LigaComponent } from './liga/liga.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { ClasificacionComponent } from './clasificacion/clasificacion.component';
+import {MatTableModule} from '@angular/material/table';
+
 
 
 
@@ -32,7 +35,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     LoginComponent,
     AdminPanelComponent,
     PerfilComponent,
-    LigaComponent
+    LigaComponent,
+    ClasificacionComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +46,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
+    MatTableModule,
     MatIconModule,
     MatInputModule,
     FormsModule,

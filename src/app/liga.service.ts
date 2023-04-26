@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { respLiga } from './respLiga';
 import { respPartida } from './respPartida';
 import { respHttp } from './respHttp';
+import { respClasificacion } from './respClasificacion';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,11 @@ export class LigaService {
       result_player1:resultP1,
       result_player2:resultP2},
     {withCredentials: true})
+  }
+
+  public getClasificacion(liga_id:number){
+    let params = new HttpParams().set("liga",liga_id);
+    return this.http.get<respClasificacion[]>("http://localhost:8080/getClasificacion",{params:params,withCredentials: true})
   }
 
 }
