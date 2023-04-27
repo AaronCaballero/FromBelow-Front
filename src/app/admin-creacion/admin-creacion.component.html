@@ -1,0 +1,10 @@
+Ejecutar <b>solo una vez </b>al comienzo de la liga, <b>cuando todos los usuarios ya esten añadidos a la liga</b>.
+Si se vuelve a ejecutar por segunda vez duplicara todas las partidas y la clasificacion.
+(puta mierda, lo se, pero que lo arregle otro)
+<br>
+<select #seleccion value="">
+    <option *ngFor="let lig of ligas" value={{lig.id}}>
+        {{lig.edicion}} {{lig.formato}}
+    </option>
+    </select>
+<button type="button" (click)="crearClasPart(seleccion.value)">crear Clasificacion y partidas</button>

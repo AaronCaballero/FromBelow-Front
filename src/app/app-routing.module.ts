@@ -8,10 +8,18 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { authUserGuard } from './auth-user.guard';
 import { LigaComponent } from './liga/liga.component';
 import { ClasificacionComponent } from './clasificacion/clasificacion.component';
+import { AdminUsersComponent } from './admin-users/admin-users.component';
+import { AdminCreacionComponent } from './admin-creacion/admin-creacion.component';
+import { AdminSignupComponent } from './admin-signup/admin-signup.component';
 
 const routes: Routes = [
   {path: '', component: InicioComponent},
-  {path: 'admin', component: AdminPanelComponent,canActivate:[authAdminGuard]},
+  {path: 'admin', component: AdminPanelComponent,canActivate:[authAdminGuard],
+    children:[
+      {path:"users", component:AdminUsersComponent},
+      {path:"creacion", component:AdminCreacionComponent},
+      {path:"signup", component:AdminSignupComponent}
+    ]},
   {path: 'perfil', component: PerfilComponent,canActivate:[authUserGuard]},
   {path: 'clasificacion', component: ClasificacionComponent,canActivate:[authUserGuard]},
   {path: 'perfil/liga', component: LigaComponent,canActivate:[authUserGuard]},

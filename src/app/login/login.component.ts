@@ -18,13 +18,11 @@ export class LoginComponent {
   constructor(private loginService:LoginService,private router:Router){}
 
   ngOnInit(){
-    this.username.value
   }
 
   onSubmit(){
     let user = this.username.value
     let pass = this.password.value
-    console.log(this.username.value)
     this.loginService.login(user,pass).subscribe(data =>this.router.navigate(["/"]).then(()=>{window.location.reload()}))
   }
 

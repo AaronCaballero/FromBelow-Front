@@ -1,0 +1,23 @@
+<form (ngSubmit)="onSubmit()">
+
+    <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput  [formControl]="username" required>
+        <mat-error *ngIf="username.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label> Nombre</mat-label>
+        <input matInput  [formControl]="nombre" required>
+        <mat-error *ngIf="username.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+<br>
+    <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput [formControl]="password" type="text">
+        <mat-error *ngIf="password.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+<br>
+      <button mat-raised-button [disabled]="username.invalid || password.invalid || nombre.invalid"
+                  type="submit" value="Submit"> Submit</button>
+</form>

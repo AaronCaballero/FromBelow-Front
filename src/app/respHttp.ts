@@ -1,4 +1,4 @@
 export interface respHttp{
-    status:boolean;
+    success:boolean;
     message:String
   }

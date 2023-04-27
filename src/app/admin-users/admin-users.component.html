@@ -1,0 +1,38 @@
+Usuarios:
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let user of users">  
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                 {{user.nombre}} 
+            </mat-panel-title>
+            <mat-panel-description>
+                ID: {{user.id}} |
+                usuario: {{user.username}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        Pertenece a estas ligas:
+        <div class="ligas" *ngFor="let lig of user.liga ">
+           · {{lig.edicion}} {{lig.formato}}
+        </div>
+
+        <div class="anadir">
+            Añadir a la Liga:
+            <mat-form-field appearance="fill" >
+                <mat-select #seleccion value="">
+                  <mat-option  *ngFor="let lig of ligas" value={{lig.id}}>
+                    {{lig.edicion}} {{lig.formato}}
+                </mat-option>
+                </mat-select>
+              </mat-form-field>
+            <button type="button" (click)="anadirALiga(seleccion.value,user.id)"> añadir</button>
+        </div>
+
+        <div class="reset">
+            Resetear contraseña
+            <input #pass type="text">
+            <button type="button" (click)="cambiarPass(user.username,pass.value)">resetar</button>
+        </div>
+        
+    </mat-expansion-panel>
+
+</mat-accordion>

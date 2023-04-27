@@ -20,6 +20,19 @@ export class LoginService {
                 {withCredentials: true})
   }
 
+  signUp(username:String|null,nombre:String|null,pass:String|null){
+    return this.http.post<respHttp>("http://localhost:8080/signUp",
+    {
+      username:username,
+      pass:pass,
+      nombre:nombre,
+      role:{
+        id:2,
+        tipo:""
+      }
+      },{withCredentials: true})
+  }
+
   signout(){
     return this.http.post<String>("http://localhost:8080/signout","",{withCredentials: true})
   }

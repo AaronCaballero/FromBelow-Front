@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { AdminService } from '../admin.service';
+import { respUser } from '../respUser';
+import { respLiga } from '../respLiga';
+import { LigaService } from '../liga.service';
 
 @Component({
   selector: 'app-admin-panel',
@@ -8,8 +11,9 @@ import { AdminService } from '../admin.service';
 })
 export class AdminPanelComponent {
 
-  constructor(private adminService:AdminService){}
+  constructor(){}
 
-
+  ngOnInit(){
+  }
 
 }

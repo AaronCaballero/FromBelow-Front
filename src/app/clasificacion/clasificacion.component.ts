@@ -10,22 +10,21 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ClasificacionComponent {
 
-  clasificaciones:respClasificacion[] =[]
-  dataSource = this.clasificaciones;
+  index:number = 1
+  dataSource:respClasificacion[] = [];
 
   constructor(private ligaService:LigaService, private route:ActivatedRoute){}
 
   ngOnInit(){
     this.route.queryParams.subscribe(params=>{
-     this.ligaService.getClasificacion(params['liga']).subscribe(data=>{
-       this.clasificaciones = data
-       this.dataSource = this.clasificaciones;
-       console.log(this.clasificaciones)
+     this.ligaService.getClasificacion(params['liga']).subscribe(data=>{ 
+      this.dataSource= data
+
      })
    })
   }
 
-  displayedColumns: string[] = ['nombre', "rondas_ganadas", 'rondas_perdidas',
+  displayedColumns: string[] = ['posicion','nombre', "rondas_ganadas", 'rondas_perdidas',
    'partidas_ganadas','partidas_empatadas','partidas_perdidas','puntos','partidas_jugadas','winrate'];
 
 

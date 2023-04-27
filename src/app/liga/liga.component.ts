@@ -32,6 +32,9 @@ export class LigaComponent {
     if(confirm("Estas seguro?")){
       this.ligaService.setResultadoPartida(id,SelUno,SelDos,PlayUno,PlayDos,this.liga_id).subscribe(data=>{
         console.log(data)
+        this.ligaService.getPartidasDelJugador(this.liga_id).subscribe(data=>{
+          this.partidas = data
+        })
       })
     }
 

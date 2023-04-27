@@ -22,6 +22,9 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { ClasificacionComponent } from './clasificacion/clasificacion.component';
 import {MatTableModule} from '@angular/material/table';
+import { AdminUsersComponent } from './admin-users/admin-users.component';
+import { AdminCreacionComponent } from './admin-creacion/admin-creacion.component';
+import { AdminSignupComponent } from './admin-signup/admin-signup.component';
 
 
 
@@ -36,7 +39,10 @@ import {MatTableModule} from '@angular/material/table';
     AdminPanelComponent,
     PerfilComponent,
     LigaComponent,
-    ClasificacionComponent
+    ClasificacionComponent,
+    AdminUsersComponent,
+    AdminCreacionComponent,
+    AdminSignupComponent
   ],
   imports: [
     BrowserModule,
