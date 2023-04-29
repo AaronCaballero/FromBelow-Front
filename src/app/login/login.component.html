@@ -2,13 +2,13 @@
 <form (ngSubmit)="onSubmit()">
 
     <mat-form-field appearance="fill">
-        <mat-label>Enter your username</mat-label>
+        <mat-label>Usuario</mat-label>
         <input matInput  [formControl]="username" required>
         <mat-error *ngIf="username.invalid">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
 <br>
     <mat-form-field appearance="fill">
-        <mat-label>Enter your password</mat-label>
+        <mat-label>Contraseña</mat-label>
         <input matInput [formControl]="password" [type]="hide ? 'password' : 'text'">
         <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -16,7 +16,7 @@
         <mat-error *ngIf="password.invalid">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
 <br>
-      <button mat-raised-button [disabled]="username.invalid || password.invalid" 
+      <button class="submit" mat-raised-button [disabled]="username.invalid || password.invalid" 
                   type="submit" value="Submit"> Submit</button>
 </form>
   

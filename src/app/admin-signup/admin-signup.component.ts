@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { LoginService } from '../login.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-admin-signup',
@@ -13,7 +14,7 @@ export class AdminSignupComponent {
   password = new FormControl("",[Validators.required])
   nombre = new FormControl("",[Validators.required])
 
-  constructor(private loginService:LoginService){}
+  constructor(private loginService:LoginService,private snackBar:MatSnackBar){}
 
   getErrorMessage(){
     return 'Obligatorio'
@@ -25,7 +26,10 @@ export class AdminSignupComponent {
     let nombre = this.nombre.value
 
     this.loginService.signUp(username,nombre,pass).subscribe(data =>{
-
+      if(data.success)
+        this.snackBar.open(data['message'].toString(), "X");
+        else
+          alert(data.message)
     })
   }
 

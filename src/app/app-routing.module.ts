@@ -11,6 +11,7 @@ import { ClasificacionComponent } from './clasificacion/clasificacion.component'
 import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { AdminCreacionComponent } from './admin-creacion/admin-creacion.component';
 import { AdminSignupComponent } from './admin-signup/admin-signup.component';
+import { PartidasComponent } from './partidas/partidas.component';
 
 const routes: Routes = [
   {path: '', component: InicioComponent},
@@ -21,8 +22,9 @@ const routes: Routes = [
       {path:"signup", component:AdminSignupComponent}
     ]},
   {path: 'perfil', component: PerfilComponent,canActivate:[authUserGuard]},
-  {path: 'clasificacion', component: ClasificacionComponent,canActivate:[authUserGuard]},
   {path: 'perfil/liga', component: LigaComponent,canActivate:[authUserGuard]},
+  {path: 'perfil/liga/clasificacion', component: ClasificacionComponent,canActivate:[authUserGuard]},
+  {path: 'perfil/liga/partidas', component: PartidasComponent,canActivate:[authUserGuard]},
   {path: 'login', component: LoginComponent}
 ];
 

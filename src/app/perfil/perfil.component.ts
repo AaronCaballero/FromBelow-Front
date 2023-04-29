@@ -13,7 +13,7 @@ export class PerfilComponent {
   constructor(private ligaService:LigaService){}
 
   ngOnInit(){
-    this.ligaService.getLigasActivas().subscribe(data =>{
+    this.ligaService.getLigasUser().subscribe(data =>{
       this.ligas = data
     })
   }

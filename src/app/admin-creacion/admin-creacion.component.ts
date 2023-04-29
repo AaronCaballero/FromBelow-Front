@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { AdminService } from '../admin.service';
 import { LigaService } from '../liga.service';
 import { respLiga } from '../respLiga';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-creacion',
@@ -10,7 +12,12 @@ import { respLiga } from '../respLiga';
 })
 export class AdminCreacionComponent {
 
-  constructor(private adminService:AdminService,private ligaService:LigaService){
+  range = new FormGroup({
+    start: new FormControl<Date | null>(null),
+    end: new FormControl<Date | null>(null),
+  });
+
+  constructor(private adminService:AdminService,private ligaService:LigaService,private snackBar:MatSnackBar){
   }
 
   ligas:respLiga[] = []
@@ -18,14 +25,13 @@ export class AdminCreacionComponent {
   ngOnInit(){
     this.ligaService.getLigasActivas().subscribe(data=>{
       this.ligas = data
-      console.log(this.ligas)
     })
   }
 
   
   crearClasPart(ligaId:String){
     let idLiga = Number(ligaId)
-    if(confirm("Ejecutar una sola vez cuando esten añadidos todos los participantes. Estas seguro?"))
+    if(prompt("Introduce 'crear' para confirmar") == "crear")
     {
       this.adminService.creaClasificacion(idLiga).subscribe( data=> {
         console.log(data)
@@ -34,6 +40,10 @@ export class AdminCreacionComponent {
         console.log(data)
       })
     }
+  }
+
+  crearLiga(){
+
   }
 
 }

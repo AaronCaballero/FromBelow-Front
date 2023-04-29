@@ -16,7 +16,7 @@ export class LoginService {
   }
 
   login(user:any,pass:any){
-      return this.http.post<String>("Http://localhost:8080/authenticate",{username:user,password:pass},
+      return this.http.post<respHttp>("Http://localhost:8080/authenticate",{username:user,password:pass},
                 {withCredentials: true})
   }
 

@@ -10,3 +10,20 @@ th{
     background-color: brown !important;
     color: antiquewhite !important;
 }
+
+div{
+    overflow-x:auto;
+}
+
+.sticky{
+    position: sticky;
+    left: 0;
+}
+
+.borde{
+    border-right: 3px solid black;
+}
+
+.mat-column-nombre {
+    flex: 0 0 50%;
+}

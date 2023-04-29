@@ -24,8 +24,8 @@ export class ClasificacionComponent {
    })
   }
 
-  displayedColumns: string[] = ['posicion','nombre', "rondas_ganadas", 'rondas_perdidas',
-   'partidas_ganadas','partidas_empatadas','partidas_perdidas','puntos','partidas_jugadas','winrate'];
+  displayedColumns: string[] = ['posicion','nombre', "rondas_ganadas",'partidas_ganadas',
+    'puntos','partidas_jugadas','winrate'];
 
 
 }

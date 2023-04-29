@@ -35,3 +35,18 @@ a{
   button{
     margin-right: 30px;
   }
+
+  mat-icon{
+    vertical-align: text-bottom;
+  }
+
+  @media only screen and (max-width: 690px) {
+
+     .logo-text{
+      display: none;
+    }
+
+    .text{
+      display: none;
+    }
+  }

@@ -16,9 +16,18 @@ export class LigaService {
     return this.http.get<respLiga[]>("http://localhost:8080/getLigas",{withCredentials: true})
   }
 
+  public getLigaById(id:number){
+    let params = new HttpParams().set("id",id);
+    return this.http.get<respLiga>("http://localhost:8080/getLiga",{params:params,withCredentials: true})
+  }
+
   public getPartidasDelJugador(liga_id:number){
     let params = new HttpParams().set("liga",liga_id);
     return this.http.get<respPartida[]>("http://localhost:8080/getPartidas",{params:params,withCredentials: true})
+  }
+
+  public getLigasUser(){
+    return this.http.get<respLiga[]>("http://localhost:8080/getLigasUser",{withCredentials: true})
   }
 
   public setResultadoPartida(id:number,resultP1:number,resultP2:number,player1Id:number,player2Id:number,ligaId:number){

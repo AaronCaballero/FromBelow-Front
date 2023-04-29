@@ -25,7 +25,7 @@ export class AdminService {
   }
 
   addUserToLiga(userId:number,ligaId:number){
-    return this.http.post<String>("Http://localhost:8080/userToLiga",{userId:userId,ligaId:ligaId},
+    return this.http.post<respHttp>("Http://localhost:8080/userToLiga",{userId:userId,ligaId:ligaId},
             {withCredentials: true})
   }
 

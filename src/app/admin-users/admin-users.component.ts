@@ -3,6 +3,7 @@ import { respUser } from '../respUser';
 import { AdminService } from '../admin.service';
 import { LigaService } from '../liga.service';
 import { respLiga } from '../respLiga';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-admin-users',
@@ -14,7 +15,7 @@ export class AdminUsersComponent {
   users:respUser[] = []
   ligas:respLiga[] = []
 
-  constructor(private adminService:AdminService,private ligaService:LigaService){}
+  constructor(private adminService:AdminService,private ligaService:LigaService,private snackBar:MatSnackBar){}
 
   ngOnInit(){
     this.adminService.getUsers().subscribe(data=>{
@@ -27,13 +28,24 @@ export class AdminUsersComponent {
   }
 
   anadirALiga(ligaId:number,userId:number){
-    this.adminService.addUserToLiga(userId,ligaId)
-    .subscribe(data => console.log('d'))
+    this.adminService.addUserToLiga(userId,ligaId).subscribe(data => {
+      if(data.success){
+        this.snackBar.open(data.message.toString(),"X")
+        this.adminService.getUsers().subscribe(data=>{
+          this.users = data
+        })
+      }
+        else
+        alert("error añadiendo a liga")
+    })
   }
 
   cambiarPass(username:String,pass:String){
     this.adminService.cambiarPass(username,pass).subscribe(data =>{
-      console.log(data)
+      if(data.success)
+        this.snackBar.open("contraseña cambiada","X")
+        else
+        alert("error cambiando pass")
     })
   }
 

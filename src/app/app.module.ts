@@ -25,8 +25,10 @@ import {MatTableModule} from '@angular/material/table';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { AdminCreacionComponent } from './admin-creacion/admin-creacion.component';
 import { AdminSignupComponent } from './admin-signup/admin-signup.component';
-
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { PartidasComponent } from './partidas/partidas.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 
 
@@ -42,7 +44,8 @@ import { AdminSignupComponent } from './admin-signup/admin-signup.component';
     ClasificacionComponent,
     AdminUsersComponent,
     AdminCreacionComponent,
-    AdminSignupComponent
+    AdminSignupComponent,
+    PartidasComponent
   ],
   imports: [
     BrowserModule,
@@ -50,11 +53,14 @@ import { AdminSignupComponent } from './admin-signup/admin-signup.component';
     AppRoutingModule,
     ReactiveFormsModule,
     MatToolbarModule,
+    MatNativeDateModule,
     MatButtonModule,
     MatFormFieldModule,
     MatTableModule,
     MatIconModule,
+    MatSnackBarModule,
     MatInputModule,
+    MatDatepickerModule,
     FormsModule,
     MatSelectModule,
     MatExpansionModule,
