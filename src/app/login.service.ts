@@ -40,4 +40,9 @@ export class LoginService {
   getUserRole(){
     return this.http.get<respHttp>("http://localhost:8080/getRole",{withCredentials: true})
   }
+
+  cambiarPassUser(password:String){
+    return this.http.post<respHttp>("Http://localhost:8080/cambiarPassUser",{password:password},
+            {withCredentials: true})
+  }
 }

@@ -1,3 +1,34 @@
 .container{
+    text-align: center;
     padding: 10px;
+    font-family: 'Magic';
+}
+
+.iconos{
+    font-family: 'MagicIcons';
+    font-size: xx-large;
+}
+
+img{
+    width: 100vw;
+}
+
+.white{
+    color:#ad9f09;
+}
+
+.black{
+    color:#1c1c1c;
+}
+
+.blue{
+    color:#3573cf;
+}
+
+.red{
+    color:#c33b31;
+}
+
+.green{
+    color:#3e9920;
 }

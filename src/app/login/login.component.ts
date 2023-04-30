@@ -25,8 +25,6 @@ export class LoginComponent {
     let user = this.username.value
     let pass = this.password.value
     this.loginService.login(user,pass).subscribe(data =>{
-
-
       if(data.success)
         this.router.navigate(["/"]).then(()=>{window.location.reload()})
         else      

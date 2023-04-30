@@ -39,7 +39,7 @@
                   </mat-select>
                 </mat-form-field>
       
-              <button (click)="click(partida.partida_id,selUno.value,selDos.value,partida.player1_id,partida.player2_id)"
+              <button mat-raised-button (click)="click(partida.partida_id,selUno.value,selDos.value,partida.player1_id,partida.player2_id)"
                [disabled]="partida.jugada">submit</button>
   
               </mat-expansion-panel>

@@ -9,6 +9,7 @@
     <span class="vertical-line"></span>
     <span class="example-spacer"></span>
     <button mat-raised-button *ngIf="logged" routerLink="perfil">Perfil</button>  
+    <a routerLink="cambiaPass" *ngIf="logged && role!='admin'"><mat-icon>password</mat-icon> </a> 
     <button mat-raised-button *ngIf="logged && role=='admin'" routerLink="admin">Panel Admin</button>  
     <span class="space-left"></span>
     <a routerLink="login" *ngIf="!logged">

@@ -29,6 +29,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { PartidasComponent } from './partidas/partidas.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import { PassChangeComponent } from './pass-change/pass-change.component';
 
 
 
@@ -45,7 +46,8 @@ import {MatNativeDateModule} from '@angular/material/core';
     AdminUsersComponent,
     AdminCreacionComponent,
     AdminSignupComponent,
-    PartidasComponent
+    PartidasComponent,
+    PassChangeComponent
   ],
   imports: [
     BrowserModule,

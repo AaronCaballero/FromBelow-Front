@@ -50,3 +50,27 @@ a{
       display: none;
     }
   }
+
+  @media only screen and (max-width: 400px) {
+
+
+    mat-toolbar{
+      height: 80px;
+    }
+
+    .vertical-line{
+      display: none;
+    }
+
+    button{
+      height: 50px !important;
+    }
+
+    .logo-text{
+      display: none;
+    }
+
+    .text{
+      display: none;
+    }
+  }

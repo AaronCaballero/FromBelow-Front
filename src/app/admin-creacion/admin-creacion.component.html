@@ -4,9 +4,11 @@ Si se vuelve a ejecutar por segunda vez duplicara todas las partidas y la clasif
 (puta mierda, lo se, pero que lo arregle otro)
 <br>
 <select #seleccion value="">
-    <option *ngFor="let lig of ligas" value={{lig.id}}>
+  <ng-container *ngFor="let lig of ligas">
+    <option *ngIf="lig.activa" value={{lig.id}}>
         {{lig.edicion}} {{lig.formato}}
     </option>
+  </ng-container>
     </select>
 <button type="button" (click)="crearClasPart(seleccion.value)">crear Clasificacion y partidas</button>
 
@@ -14,11 +16,11 @@ Si se vuelve a ejecutar por segunda vez duplicara todas las partidas y la clasif
 <h3>Crear liga nueva</h3>
 edicion
 <br>
-<input type="text">
+<input type="text" [(ngModel)]=edicion>
 <br>
 formato
 <br>
-<input type="text">
+<input type="text" [(ngModel)]=formato>
 <br>
 <br>
 <mat-form-field appearance="fill">
@@ -34,3 +36,30 @@ formato
     <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
     <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
   </mat-form-field>
+
+  <br><br>
+  Activa:
+  <br>
+    <input type="radio" [(ngModel)]=activa id="html" name="fav_language" value=true>
+ <label for="html">true</label><br>
+  <input type="radio" [(ngModel)]=activa id="css" name="fav_language" value=false>
+  <label for="css">false</label><br>
+
+  <button (click)="crearLiga()">submit</button>
+
+
+<br>
+<h3>Activar/Desactivar ligas</h3>
+<select #liges value="">
+  <option *ngFor="let lig of ligas" value={{lig.id}}>
+      {{lig.edicion}} {{lig.formato}}
+  </option>
+  </select>
+<br>
+  Activa:
+  <br>
+    <input type="radio" [(ngModel)]=activa2 id="html" value=true>
+ <label for="html">true</label><br>
+  <input type="radio" [(ngModel)]=activa2 id="css" value=false>
+  <label for="css">false</label><br>
+  <button (click)="DesActLiga(liges.value)">submit</button>
