@@ -16,12 +16,12 @@ export class LoginService {
   }
 
   login(user:any,pass:any){
-      return this.http.post<respHttp>("Http://localhost:8080/authenticate",{username:user,password:pass},
+      return this.http.post<respHttp>("/api/authenticate",{username:user,password:pass},
                 {withCredentials: true})
   }
 
   signUp(username:String|null,nombre:String|null,pass:String|null){
-    return this.http.post<respHttp>("http://localhost:8080/signUp",
+    return this.http.post<respHttp>("/api/signUp",
     {
       username:username,
       pass:pass,
@@ -34,15 +34,15 @@ export class LoginService {
   }
 
   signout(){
-    return this.http.post<String>("http://localhost:8080/signout","",{withCredentials: true})
+    return this.http.post<respHttp>("/api/signout",{},{withCredentials: true})
   }
 
   getUserRole(){
-    return this.http.get<respHttp>("http://localhost:8080/getRole",{withCredentials: true})
+    return this.http.get<respHttp>("/api/getRole",{withCredentials: true})
   }
 
   cambiarPassUser(password:String){
-    return this.http.post<respHttp>("Http://localhost:8080/cambiarPassUser",{password:password},
+    return this.http.post<respHttp>("/api/cambiarPassUser",{password:password},
             {withCredentials: true})
   }
 }

@@ -40,10 +40,10 @@ formato
   <br><br>
   Activa:
   <br>
-    <input type="radio" [(ngModel)]=activa id="html" name="fav_language" value=true>
- <label for="html">true</label><br>
-  <input type="radio" [(ngModel)]=activa id="css" name="fav_language" value=false>
-  <label for="css">false</label><br>
+    <input type="radio" [(ngModel)]=activa id="htmll" name="fav_language" value=true>
+ <label for="htmll">true</label><br>
+  <input type="radio" [(ngModel)]=activa id="csss" name="fav_language" value=false>
+  <label for="csss">false</label><br>
 
   <button (click)="crearLiga()">submit</button>
 
@@ -63,3 +63,17 @@ formato
   <input type="radio" [(ngModel)]=activa2 id="css" value=false>
   <label for="css">false</label><br>
   <button (click)="DesActLiga(liges.value)">submit</button>
+<br>
+<br>
+<h3>Generar Excel de la liga</h3>
+<select #sel value="">
+  <ng-container *ngFor="let lig of ligas">
+    <option *ngIf="lig.activa" value={{lig.id}}>
+        {{lig.edicion}} {{lig.formato}}
+    </option>
+  </ng-container>
+    </select>
+<button type="button" (click)="excel(sel.value)">obtener excel</button>
+
+<br>
+<br><br>

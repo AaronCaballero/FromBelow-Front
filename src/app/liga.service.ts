@@ -13,29 +13,29 @@ export class LigaService {
   constructor(private http:HttpClient) { }
 
   public getLigasActivas(){
-    return this.http.get<respLiga[]>("http://localhost:8080/getLigas",{withCredentials: true})
+    return this.http.get<respLiga[]>("/api/getLigas",{withCredentials: true})
   }
 
   public getAllLigas(){
-    return this.http.get<respLiga[]>("http://localhost:8080/getAllLigas",{withCredentials: true})
+    return this.http.get<respLiga[]>("/api/getAllLigas",{withCredentials: true})
   }
 
   public getLigaById(id:number){
     let params = new HttpParams().set("id",id);
-    return this.http.get<respLiga>("http://localhost:8080/getLiga",{params:params,withCredentials: true})
+    return this.http.get<respLiga>("/api/getLiga",{params:params,withCredentials: true})
   }
 
   public getPartidasDelJugador(liga_id:number){
     let params = new HttpParams().set("liga",liga_id);
-    return this.http.get<respPartida[]>("http://localhost:8080/getPartidas",{params:params,withCredentials: true})
+    return this.http.get<respPartida[]>("/api/getPartidas",{params:params,withCredentials: true})
   }
 
   public getLigasUser(){
-    return this.http.get<respLiga[]>("http://localhost:8080/getLigasUser",{withCredentials: true})
+    return this.http.get<respLiga[]>("/api/getLigasUser",{withCredentials: true})
   }
 
   public crearLiga(edicion:String,formato:String,activa:boolean,fechaIni:Date|null,fechaFin:Date|null){
-    return this.http.post<respHttp>("http://localhost:8080/crearLiga",
+    return this.http.post<respHttp>("/api/crearLiga",
     {
       edicion:edicion,
       formato:formato,
@@ -46,12 +46,12 @@ export class LigaService {
   }
 
   public desAscLiga(ligaId:number,activa:boolean){
-    return this.http.post<respHttp>("http://localhost:8080/actuLiga",{ligaId:ligaId,activa:activa},
+    return this.http.post<respHttp>("/api/actuLiga",{ligaId:ligaId,activa:activa},
     {withCredentials: true})
   }
 
   public setResultadoPartida(id:number,resultP1:number,resultP2:number,player1Id:number,player2Id:number,ligaId:number){
-    return this.http.post<respHttp>("http://localhost:8080/actualizaPartida",
+    return this.http.post<respHttp>("/api/actualizaPartida",
     {
       partida_id:id,
       liga_id:ligaId,
@@ -65,7 +65,7 @@ export class LigaService {
 
   public getClasificacion(liga_id:number){
     let params = new HttpParams().set("liga",liga_id);
-    return this.http.get<respClasificacion[]>("http://localhost:8080/getClasificacion",{params:params,withCredentials: true})
+    return this.http.get<respClasificacion[]>("/api/getClasificacion",{params:params,withCredentials: true})
   }
 
 }

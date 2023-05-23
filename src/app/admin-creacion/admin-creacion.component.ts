@@ -4,6 +4,8 @@ import { LigaService } from '../liga.service';
 import { respLiga } from '../respLiga';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormControl, FormGroup } from '@angular/forms';
+import { saveAs } from 'file-saver';
+
 
 @Component({
   selector: 'app-admin-creacion',
@@ -74,6 +76,16 @@ export class AdminCreacionComponent {
           else
             alert("error activando/desactivando liga")
         })
+  }
+
+  excel(id:String){
+    let idLiga = Number(id)
+    this.adminService.getExcel(idLiga).subscribe((data:any) => {
+      let blob:any = new Blob([data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      const url = window.URL.createObjectURL(blob);
+      saveAs(blob, 'liga.xlsx')
+    }), (error: any) => console.log('Error downloading the file'),
+    () => console.info('File downloaded successfully');
   }
 
 }

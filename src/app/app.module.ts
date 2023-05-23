@@ -30,6 +30,7 @@ import { PartidasComponent } from './partidas/partidas.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { PassChangeComponent } from './pass-change/pass-change.component';
+import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 
 
 
@@ -68,7 +69,8 @@ import { PassChangeComponent } from './pass-change/pass-change.component';
     MatExpansionModule,
     HttpClientModule
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    {provide: LocationStrategy,useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

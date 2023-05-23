@@ -30,8 +30,18 @@ export class AppComponent{
 
 
   signout(){
-    this.loginService.signout().subscribe( data => this.router.navigateByUrl("/"))
+    this.loginService.signout().subscribe( async data => {
+      console.log(data)
+      if(data.success)
+        console.log("fora")
+        //this.router.navigate(["/"]).then(()=>{window.location.reload()})
+    })
   }
+
+  probas(){
+    console.log("va ya o k ")
+  }
+
 
   
 }
