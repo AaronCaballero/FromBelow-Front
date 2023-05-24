@@ -31,6 +31,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { PassChangeComponent } from './pass-change/pass-change.component';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
+import { AdminPartidasComponent } from './admin-partidas/admin-partidas.component';
 
 
 
@@ -48,7 +49,8 @@ import {HashLocationStrategy, LocationStrategy} from '@angular/common';
     AdminCreacionComponent,
     AdminSignupComponent,
     PartidasComponent,
-    PassChangeComponent
+    PassChangeComponent,
+    AdminPartidasComponent
   ],
   imports: [
     BrowserModule,

@@ -41,12 +41,13 @@ export class AdminUsersComponent {
   }
 
   cambiarPass(username:String,pass:String){
-    this.adminService.cambiarPass(username,pass).subscribe(data =>{
-      if(data.success)
-        this.snackBar.open("contraseña cambiada","X")
-        else
-        alert("error cambiando pass")
-    })
+    if(confirm("Seguro?"))
+      this.adminService.cambiarPass(username,pass).subscribe(data =>{
+        if(data.success)
+          this.snackBar.open("contraseña cambiada","X")
+          else
+          alert("error cambiando pass")
+      })
   }
 
 }

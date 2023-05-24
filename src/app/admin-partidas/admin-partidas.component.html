@@ -1,0 +1,42 @@
+<div *ngIf="partidas.length != 0">
+  
+    <div *ngFor="let partida of partidas, let i = index">
+        
+        <mat-accordion>
+          
+            <mat-expansion-panel>  
+            <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{partida.player1_nombre}} VS <b>{{partida.player2_nombre}}</b> 
+            </mat-panel-title>
+            <mat-panel-description>
+
+                <mat-icon *ngIf="partida.jugada">check_circle_outline</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <mat-form-field appearance="fill" class="resultado">
+
+                <mat-select #selUno value="{{partida.result_player1}}" [disabled]="partida.jugada">
+                  <mat-option value=0>0</mat-option>
+                  <mat-option value=1>1</mat-option>
+                  <mat-option value=2>2</mat-option>
+                </mat-select>
+              </mat-form-field>
+    
+              <mat-form-field appearance="fill" class="resultado">
+    
+                <mat-select #selDos value="{{partida.result_player2}}" [disabled]="partida.jugada">
+                  <mat-option value=0>0</mat-option>
+                  <mat-option value=1>1</mat-option>
+                  <mat-option value=2>2</mat-option>
+                </mat-select>
+              </mat-form-field>
+    
+            <button mat-raised-button (click)="click(partida.partida_id)">Resetear</button>
+
+            </mat-expansion-panel>
+        </mat-accordion>
+        <hr>
+    </div>
+
+</div>

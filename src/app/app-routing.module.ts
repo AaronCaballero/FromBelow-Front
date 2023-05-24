@@ -13,6 +13,7 @@ import { AdminCreacionComponent } from './admin-creacion/admin-creacion.componen
 import { AdminSignupComponent } from './admin-signup/admin-signup.component';
 import { PartidasComponent } from './partidas/partidas.component';
 import { PassChangeComponent } from './pass-change/pass-change.component';
+import { AdminPartidasComponent } from './admin-partidas/admin-partidas.component';
 
 const routes: Routes = [
   {path: '', component: InicioComponent},
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path: 'perfil/liga', component: LigaComponent,canActivate:[authUserGuard]},
   {path: 'perfil/liga/clasificacion', component: ClasificacionComponent,canActivate:[authUserGuard]},
   {path: 'perfil/liga/partidas', component: PartidasComponent,canActivate:[authUserGuard]},
+  {path: 'admin/users/partidass', component: AdminPartidasComponent,canActivate:[authUserGuard]},
   {path: 'login', component: LoginComponent}
 ];
 

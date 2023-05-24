@@ -1,13 +1,16 @@
 <div class="container">
+    <a href="https://deckstats.net/decks/217745/f115755/" target="_blank"><button><h3>Listado de mazos</h3></button></a>
     <h2> Apuntado a las siguientes ligas:</h2>
     <br>
     <div *ngIf="ligas.length != 0">
         <hr>
             <a *ngFor="let liga of ligas" routerLink="liga" [queryParams]="{id:liga.id}">
-                <h3>{{liga.edicion}} Edicion Liga {{liga.formato}} Alcora</h3>
+                <button>
+                <h2>{{liga.edicion}} Edicion Liga {{liga.formato}} Alcora</h2>
                 <b>fecha Inicio:</b> {{liga.fecha_ini | date:'dd/MM/yyyy'}}
                 <br>
                 <b>fecha Fin: </b>{{liga.fecha_fin | date:'dd/MM/yyyy'}}
+                </button>
                 <hr>
             </a>
     </div>
