@@ -1,26 +1,42 @@
-
 <!--Menu para pantallas grandes-->
 <mat-toolbar>
+  <a href="">
+    <span class="logo"
+      ><img src="./assets/images/logo.png" />
+      <span class="logo-text"> From Below Team</span>
+    </span></a
+  >
 
-    <a href="">
-      <span class="logo"><img src="./assets/images/logo.png"> 
-        <span class="logo-text"> From Below Team</span>
-      </span></a>
-    <span class="vertical-line"></span>
-    <span class="example-spacer"></span>
-    <button mat-raised-button *ngIf="logged" routerLink="perfil">Perfil</button>  
-    <a routerLink="cambiaPass" *ngIf="logged && role!='admin'"><mat-icon>password</mat-icon> </a> 
-    <button mat-raised-button *ngIf="logged && role=='admin'" routerLink="admin">Panel Admin</button>  
-    <span class="space-left"></span>
-    <a routerLink="login" *ngIf="!logged">
-      <span class="text">Log in</span>
-      <mat-icon>login</mat-icon>
-    </a>
-    <a (click)="signout()" href="" *ngIf="logged">
-      <span class="text">Log out</span>
-      <mat-icon>logout</mat-icon>
-    </a>
+  <span class="vertical-line"></span>
 
+  <span class="example-spacer"></span>
+
+  <button mat-raised-button *ngIf="logged" routerLink="perfil">Perfil</button>
+
+  <a routerLink="cambiaPass" *ngIf="logged && role != 'admin'"
+    ><mat-icon>password</mat-icon>
+  </a>
+
+  <button
+    mat-raised-button
+    *ngIf="logged && role == 'admin'"
+    routerLink="admin"
+  >
+    Panel Admin
+  </button>
+
+  <span class="space-left"></span>
+
+  <a routerLink="login" *ngIf="!logged">
+    <span class="text">Log in</span>
+    <mat-icon>login</mat-icon>
+  </a>
+
+  <a (click)="signout()" href="" *ngIf="logged">
+    <span class="text">Log out</span>
+
+    <mat-icon>logout</mat-icon>
+  </a>
 </mat-toolbar>
 
 <router-outlet></router-outlet>

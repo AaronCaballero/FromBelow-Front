@@ -1,76 +1,79 @@
-mat-toolbar{
-    background-color: #492f43;
-    color: #f4dbdf;
+mat-toolbar {
+  position: fixed;
+  background-color: #321d80;
+  color: white;
 }
 
-.vertical-line{
+.vertical-line {
   border-right: solid 1px white;
   height: 40px;
 }
 
 .example-spacer {
-    flex: 0.1 1 auto;
-  }
-
-  .space-left {
-    flex: 1 1 auto;
-  }
-
-a{
-    text-decoration: none;
-    color: #f4dbdf;
+  flex: 0.1 1 auto;
 }
-.logo{
-  font-family: 'Magic';
-    font-size: 19px;
-    padding-right:1pc;
 
+.space-left {
+  flex: 1 1 auto;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+.logo {
+  font-family: "Magic";
+  font-size: 20px;
+  padding-right: 1pc;
 }
 
 .logo img {
-  width:60px;
+  width: 50px;
   vertical-align: middle;
 }
-  
-  button{
-    margin-right: 30px;
+
+button {
+  margin-right: 30px;
+}
+
+mat-icon {
+  vertical-align: text-bottom;
+}
+
+@media only screen and (max-width: 690px) {
+  .logo-text {
+    display: none;
   }
 
-  mat-icon{
-    vertical-align: text-bottom;
+  .text {
+    display: none;
   }
 
-  @media only screen and (max-width: 690px) {
+  .logo img {
+    width: 35px;
+    vertical-align: middle;
+  }
+}
 
-     .logo-text{
-      display: none;
-    }
-
-    .text{
-      display: none;
-    }
+@media only screen and (max-width: 400px) {
+  mat-toolbar {
+    height: 40px;
   }
 
-  @media only screen and (max-width: 400px) {
-
-
-    mat-toolbar{
-      height: 80px;
-    }
-
-    .vertical-line{
-      display: none;
-    }
-
-    button{
-      height: 50px !important;
-    }
-
-    .logo-text{
-      display: none;
-    }
-
-    .text{
-      display: none;
-    }
+  .vertical-line {
+    display: none;
   }
+
+  button {
+    height: 50px !important;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .text {
+    display: none;
+  }
+}
