@@ -1,30 +1,45 @@
-form{
-    text-align: center;
-    margin-top: 30px;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-mat-form-field{
-    width: 250px;
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  border: 2px solid #321d80;
+  border-radius: 20px;
+  gap: 10px;
 }
 
-.submit{
-    width: 200px;
-    height: 50px !important;
-    background-color: #ec8744 !important;
+mat-form-field {
+  width: 250px;
+  backdrop-filter: blur(5px);
 }
 
-.submit:disabled{
-    background-color: rgb(233, 171, 114) !important;
+.submit {
+  width: 200px;
+  height: 50px !important;
+  background-color: #321d80 !important;
+  color: white !important;
+  margin-top: 20px;
 }
 
-.snackbar{
-    background-color: crimson !important;
+.submit:disabled {
+  background-color: #321d8070 !important;
+  color: #ffffff90;
 }
 
+.snackbar {
+  background-color: crimson !important;
+}
 
-    .snackbar {
-      --mdc-snackbar-container-color: #2196f3;
-      --mat-mdc-snack-bar-button-color: #fff;
-      --mdc-snackbar-supporting-text-color: #fff;
-    }
-  
+.snackbar {
+  --mdc-snackbar-container-color: #2196f3;
+  --mat-mdc-snack-bar-button-color: #fff;
+  --mdc-snackbar-supporting-text-color: #fff;
+}
