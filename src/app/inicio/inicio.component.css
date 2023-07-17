@@ -1,37 +1,54 @@
-.container{
-    text-align: center;
-    font-family: 'Magic';
-    height: 92vh;
-    padding-top: 8vh;
-    overflow-y: hidden;
+.container {
+  text-align: center;
+  font-family: "Magic";
+  height: 92vh;
+  padding-top: 8vh;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.iconos{
-    font-family: 'MagicIcons';
-    font-size: xx-large;
+h1 {
+  font-size: 3rem;
+  color: white;
+  margin-top: 500px;
 }
 
-img{
-    width: 100vw;
-    max-height: fit-content;
+.iconos {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-family: "MagicIcons";
+  font-size: 4rem;
+  gap: 15px;
 }
 
-.white{
-    color:#ad9f09;
+img {
+  width: 100vw;
+  height: 100vh;
+  max-height: fit-content;
+  z-index: -1;
+  position: absolute;
+  top: 0;
 }
 
-.black{
-    color:#1c1c1c;
+.white {
+  color: #ad9f09;
 }
 
-.blue{
-    color:#3573cf;
+.black {
+  color: #1c1c1c;
 }
 
-.red{
-    color:#c33b31;
+.blue {
+  color: #3573cf;
 }
 
-.green{
-    color:#3e9920;
+.red {
+  color: #c33b31;
+}
+
+.green {
+  color: #3e9920;
 }

@@ -14,11 +14,11 @@ form {
   border: 2px solid #321d80;
   border-radius: 20px;
   gap: 10px;
+  backdrop-filter: blur(5px);
 }
 
 mat-form-field {
   width: 250px;
-  backdrop-filter: blur(5px);
 }
 
 .submit {
@@ -42,4 +42,13 @@ mat-form-field {
   --mdc-snackbar-container-color: #2196f3;
   --mat-mdc-snack-bar-button-color: #fff;
   --mdc-snackbar-supporting-text-color: #fff;
+}
+
+img {
+  width: 100vw;
+  height: 100vh;
+  max-height: fit-content;
+  z-index: -1;
+  position: absolute;
+  top: 0;
 }
