@@ -3,7 +3,7 @@
   font-family: "Magic";
   height: 92vh;
   padding-top: 8vh;
-  overflow-y: hidden;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,12 +25,15 @@ h1 {
 }
 
 img {
-  width: 100vw;
   height: 100vh;
   max-height: fit-content;
   z-index: -1;
   position: absolute;
   top: 0;
+
+  @media (min-width: 1200px) {
+    width: 100vw;
+  }
 }
 
 .white {
